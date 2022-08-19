@@ -1,10 +1,11 @@
-function turnLight() {
-  let bulb = document.getElementById("lightbulb");
+let bulb = document.getElementById("lightbulb");
+function turnLightOnOff() {
   if (bulb.src.match("lightoff")) {
-    document.body.style.backgroundColor = "yellow";
+    document.body.style.backgroundImage =
+      "radial-gradient(white, white, orange)";
     bulb.src = "lighton.jpg";
   } else {
-    document.body.style.backgroundColor = "white";
+    document.body.style.backgroundImage = "radial-gradient(white, white)";
     bulb.src = "lightoff.jpg";
   }
 }
