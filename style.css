@@ -11,9 +11,10 @@ body {
   font-family: sans-serif;
 }
 
-.container {
+#container {
   margin: 0 auto;
   text-align: center;
+  width: 100%;
 }
 
 img {
@@ -24,4 +25,14 @@ img {
 
 #lightbulb:hover {
   cursor: pointer;
+}
+
+.active {
+  background: rgb(247, 247, 235);
+  background: radial-gradient(
+    circle,
+    rgba(247, 247, 235, 1) 0%,
+    rgba(252, 235, 133, 1) 64%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
