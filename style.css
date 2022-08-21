@@ -5,7 +5,6 @@
 }
 
 body {
-  height: 100vh;
   display: flex;
   align-items: center;
   font-family: sans-serif;
@@ -15,9 +14,13 @@ body {
   margin: 0 auto;
   text-align: center;
   width: 100%;
+  position: relative;
+  top: 0;
+  bottom: 0;
 }
 
 img {
+  margin-top: 50px;
   transform: rotate(180deg);
   width: 512px;
   height: 512px;
@@ -35,4 +38,20 @@ img {
     rgba(252, 235, 133, 1) 64%,
     rgba(0, 212, 255, 1) 100%
   );
+}
+
+.trapezoid {
+  width: 450px;
+  height: 250px;
+  transform: perspective(5px) rotateX(1deg);
+  position: absolute;
+  margin-left: 33%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  border-left: 1px grey;
+  border-right: 1px grey;
+  background: linear-gradient(to right, grey, orange, grey);
 }
