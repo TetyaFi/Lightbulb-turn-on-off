@@ -4,30 +4,31 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  font-family: sans-serif;
+html {
+  height: 100%;
 }
 
-#container {
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: black;
+}
+
+.container {
+  display: grid;
   margin: 0 auto;
   text-align: center;
   width: 100%;
-  position: relative;
-  top: 0;
-  bottom: 0;
+  height: 100%;
 }
 
-img {
-  margin-top: 50px;
+.bulb {
+  margin: auto;
   transform: rotate(180deg);
-  width: 512px;
-  height: 512px;
-}
-
-#lightbulb:hover {
-  cursor: pointer;
+  width: 312px;
+  height: 312px;
 }
 
 .active {
@@ -36,22 +37,69 @@ img {
     circle,
     rgba(247, 247, 235, 1) 0%,
     rgba(252, 235, 133, 1) 64%,
-    rgba(0, 212, 255, 1) 100%
+    rgb(0, 9, 10) 100%
   );
 }
 
 .trapezoid {
-  width: 450px;
+  z-index: 1;
+  grid-area: 1/-1;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
   height: 250px;
+  margin: auto;
   transform: perspective(5px) rotateX(1deg);
-  position: absolute;
-  margin-left: 33%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 100;
   border-left: 1px grey;
   border-right: 1px grey;
-  background: linear-gradient(to right, grey, orange, grey);
+  background: linear-gradient(
+    to right,
+    rgb(54, 54, 54),
+    rgb(61, 90, 128),
+    rgb(54, 54, 54)
+  );
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  width: 100px;
+  height: 200px;
+  background: grey;
+  display: flex;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  grid-area: 1/-1;
+  display: flex;
+  flex-direction: column;
+  top: 2px;
+  left: 2px;
+  width: 99px;
+  height: 99px;
+  background: #fff;
+  border-radius: 90px;
+  border-color: grey;
+  transition: 0.1s ease-in-out;
+}
+
+input:checked + label {
+  background: #f3c93e;
+}
+
+input:checked + label:after {
+  bottom: calc(100% - 1px);
+  transform: translateY(100%);
+}
+
+label:active:after {
+  height: 99px;
 }

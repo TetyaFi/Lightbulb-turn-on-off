@@ -8,15 +8,14 @@
     <title>Turn light on</title>
   </head>
   <body>
-    <div id="container">
+    <div class="container">
       <div class="trapezoid"></div>
-      <img
-        class="bulb"
-        src="lightoff.jpg"
-        alt=""
-        id="lightbulb"
-        onclick="turnLightOnOff()"
-      />
+      <img class="bulb" src="lightoff.jpg" alt="" id="lightbulb" />
+      <div class="toggleSwitch">
+        <input type="checkbox" id="switch" onclick="turnLightOnOff()" /><label
+          for="switch"
+        ></label>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>

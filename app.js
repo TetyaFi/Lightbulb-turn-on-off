@@ -1,3 +1,7 @@
+const lightbulb = document.querySelector(".container");
+
+const toggleSwitch = document.getElementById("switch");
+
 const bulb = document.getElementById("lightbulb");
 function turnLightOnOff() {
   if (bulb.src.match("lightoff")) {
@@ -7,8 +11,6 @@ function turnLightOnOff() {
   }
 }
 
-const lightbulb = document.querySelector("#container");
-
-bulb.addEventListener("click", () => {
+toggleSwitch.addEventListener("click", () => {
   lightbulb.classList.toggle("active");
 });
