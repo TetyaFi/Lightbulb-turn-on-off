@@ -14,3 +14,13 @@ function turnLightOnOff() {
 toggleSwitch.addEventListener("click", () => {
   lightbulb.classList.toggle("active");
 });
+
+let color = document.getElementById("colorPicker").value;
+console.log(color);
+
+function changeColor(ev) {
+  document.querySelector(".active").style.background =
+    "radial-gradient(circle, white 0%, " + ev.target.value + "60%, black 100%)";
+}
+
+document.querySelector("colorPicker").onchange = changeColor;

@@ -32,7 +32,6 @@ body {
 }
 
 .active {
-  background: rgb(247, 247, 235);
   background: radial-gradient(
     circle,
     rgba(247, 247, 235, 1) 0%,
@@ -60,13 +59,13 @@ body {
   );
 }
 
-input[type="checkbox"] {
+#switch[type="checkbox"] {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-label {
+#labelSwitch {
   cursor: pointer;
   width: 100px;
   height: 200px;
@@ -76,7 +75,7 @@ label {
   position: relative;
 }
 
-label:after {
+#labelSwitch:after {
   content: "";
   grid-area: 1/-1;
   display: flex;
@@ -91,15 +90,26 @@ label:after {
   transition: 0.1s ease-in-out;
 }
 
-input:checked + label {
+#switch:checked + label {
   background: #f3c93e;
 }
 
-input:checked + label:after {
+#switch:checked + label:after {
   bottom: calc(100% - 1px);
   transform: translateY(100%);
 }
 
-label:active:after {
+#labelSwitch:active:after {
   height: 99px;
+}
+
+.colorPicker {
+  color: red;
+}
+
+#colorPicker {
+  height: 50px;
+  width: 100;
+  border: 1px solid rgb(196, 179, 179);
+  border-radius: 6px;
 }
