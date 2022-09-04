@@ -18,10 +18,9 @@ toggleSwitch.addEventListener("click", () => {
   lightbulb.classList.toggle("active");
 });
 
-colorpicker.addEventListener("input", function (e) {
+colorpicker.addEventListener("input", function UserChangeColor(e) {
   color = e.target.value;
-  if (color === localStorage.getItem("bgColor")) return;
-  localStorage.setItem("bgColor", color);
   lightbulb.style.backgroundColor = colorpicker.value;
-  lightbulb.classList.toggle("active");
+  lightbulb.classList.remove("active");
+  lightbulb.classList.add("changedcolor");
 });
