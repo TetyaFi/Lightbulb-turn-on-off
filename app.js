@@ -16,11 +16,12 @@ function turnLightOnOff() {
 
 toggleSwitch.addEventListener("click", () => {
   lightbulb.classList.toggle("active");
+  lightbulb.classList.toggle("colorPicker");
 });
 
 colorpicker.addEventListener("input", function UserChangeColor(e) {
   color = e.target.value;
   lightbulb.style.backgroundColor = colorpicker.value;
-  lightbulb.classList.remove("active");
   lightbulb.classList.add("changedcolor");
+  sessionStorage;
 });
